@@ -8,7 +8,7 @@ export class UserService {
 
   public listarUsuarios=[];
 
-  private url = '/api/users?page=2';
+  private url = 'https://reqres.in/api/users?page=2';
 
   constructor(private http: HttpClient ) { }
 
