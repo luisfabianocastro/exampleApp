@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from '../models/IUser.model';
 import { UserService } from '../servico/user.service';
 
 @Component({
@@ -8,10 +9,14 @@ import { UserService } from '../servico/user.service';
 })
 export class Tab1Page implements OnInit{
 
+  usuarios: IUser;
+
   constructor(public userService:UserService) {}
 
   ngOnInit(){
-    this.userService.buscarTodosUsuarios().subscribe(dados => {console.log(dados)})
+    this.userService.buscarTodosUsuarios().subscribe(dados => {
+      this.usuarios=dados;
+    });
   }
 
 }
